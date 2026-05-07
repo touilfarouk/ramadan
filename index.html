@@ -1,17 +1,21 @@
 ﻿<!doctype html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ramadan 2026 Algeria Prayer & Iftar Guide</title>
+  <title>دليل رمضان في الجزائر لمواقيت الصلاة والإفطار</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400..800&display=swap" />
   <style>
     :root {
       --bg: #f7f4ea;
       --card: #fffdf6;
       --ink: #1f2a2e;
       --muted: #5b676c;
-      --accent: #0f6d5e;
-      --accent-soft: #d8efe9;
+      --accent: #1b4332;
+      --accent-light: #2d6a4f;
+      --accent-soft: #dcebdd;
       --line: #d9ddd0;
     }
 
@@ -19,8 +23,9 @@
 
     body {
       margin: 0;
-      font-family: "Segoe UI", Tahoma, sans-serif;
+      font-family: "Cairo", "Segoe UI", Tahoma, sans-serif;
       color: var(--ink);
+      direction: rtl;
       background:
         radial-gradient(circle at 10% 0%, #ece6d6 0%, transparent 30%),
         radial-gradient(circle at 100% 20%, #d7ebe4 0%, transparent 28%),
@@ -35,16 +40,17 @@
     }
 
     .hero {
-      background: linear-gradient(130deg, #0f6d5e, #124f64);
+      background: linear-gradient(160deg, var(--accent), var(--accent-light));
       color: #f5fbf9;
       border-radius: 16px;
       padding: 24px;
-      box-shadow: 0 10px 30px rgba(18, 79, 100, 0.2);
+      box-shadow: 0 10px 30px rgba(27, 67, 50, 0.22);
       animation: rise 500ms ease-out;
     }
 
     .hero h1 {
       margin: 0 0 8px;
+      font-family: "Cairo", "Segoe UI", Tahoma, sans-serif;
       font-size: clamp(1.4rem, 2.4vw, 2.1rem);
       letter-spacing: 0.2px;
     }
@@ -68,14 +74,14 @@
       font-size: 0.95rem;
     }
 
-    select, button {
+    select, input, button {
       border-radius: 10px;
       border: 1px solid rgba(255, 255, 255, 0.3);
       padding: 10px 12px;
       font-size: 0.95rem;
     }
 
-    select {
+    select, input {
       min-width: 180px;
       background: #f8fffd;
       color: #0f3d35;
@@ -92,6 +98,12 @@
 
     button:hover { filter: brightness(0.95); }
     button:active { transform: translateY(1px); }
+
+    .secondary-btn {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.28);
+      color: #f5fbf9;
+    }
 
     .meta {
       margin-top: 18px;
@@ -131,7 +143,7 @@
     thead th {
       background: var(--accent-soft);
       color: #0d4d41;
-      text-align: left;
+      text-align: right;
       font-size: 0.9rem;
       letter-spacing: 0.15px;
       position: sticky;
@@ -197,54 +209,57 @@
       th, td { padding: 9px; }
       .controls { align-items: stretch; }
       .controls > * { width: 100%; }
-      select, button { width: 100%; }
+      select, input, button { width: 100%; }
     }
   </style>
 </head>
 <body>
   <main class="container">
     <section class="hero">
-      <h1>Ramadan 2026 Algeria Prayer & Iftar Table</h1>
-      <p>This guide starts from <strong>Thursday, February 19, 2026</strong> (1 Ramadan 1447 AH in Algeria).</p>
-      <p>Pick your city to load the daily times for the 5 prayers and iftar (Maghrib).</p>
+      <h1 id="heroTitle">جدول رمضان في الجزائر لمواقيت الصلاة والإفطار</h1>
+      <p id="heroIntro">أدخل السنة الميلادية لتحميل جدول مواقيت رمضان في الجزائر.</p>
+      <p>اختر مدينتك لتحميل المواقيت اليومية للصلوات الخمس ووقت الإفطار (المغرب).</p>
 
       <div class="controls">
-        <label for="citySelect">City</label>
-        <select id="citySelect" aria-label="Select Algerian city">
-          <option value="Algiers">Algiers</option>
-          <option value="Oran">Oran</option>
-          <option value="Constantine">Constantine</option>
-          <option value="Annaba">Annaba</option>
-          <option value="Tlemcen">Tlemcen</option>
-          <option value="Batna">Batna</option>
-          <option value="Bejaia">Bejaia</option>
-          <option value="Tizi Ouzou">Tizi Ouzou</option>
-          <option value="Ghardaia">Ghardaia</option>
-          <option value="Ouargla">Ouargla</option>
+        <label for="citySelect">المدينة</label>
+        <select id="citySelect" aria-label="اختر مدينة جزائرية">
+          <option value="Algiers">الجزائر</option>
+          <option value="Oran">وهران</option>
+          <option value="Constantine">قسنطينة</option>
+          <option value="Annaba">عنابة</option>
+          <option value="Tlemcen">تلمسان</option>
+          <option value="Batna">باتنة</option>
+          <option value="Bejaia">بجاية</option>
+          <option value="Tizi Ouzou">تيزي وزو</option>
+          <option value="Ghardaia">غرداية</option>
+          <option value="Ouargla">ورقلة</option>
         </select>
-        <button id="loadBtn" type="button">Load Ramadan Table</button>
+        <label for="yearInput">السنة</label>
+        <input id="yearInput" type="number" min="2000" max="2100" step="1" value="2026" aria-label="أدخل السنة الميلادية" />
+        <button id="loadBtn" type="button">تحميل جدول رمضان</button>
+        <button id="dailyBtn" class="secondary-btn" type="button">تحميل مواقيت الصلاة اليومية</button>
       </div>
 
       <div class="meta">
-        <div class="pill"><strong>Country:</strong> Algeria</div>
-        <div class="pill"><strong>Timezone:</strong> Africa/Algiers (UTC+1)</div>
-        <div class="pill"><strong>Ramadan span:</strong> 30 days (Feb 19 - Mar 20, 2026)</div>
+        <div class="pill"><strong>الدولة:</strong> الجزائر</div>
+        <div class="pill"><strong>المنطقة الزمنية:</strong> Africa/Algiers (UTC+1)</div>
+        <div id="ramadanSpan" class="pill"><strong>مدة رمضان:</strong> لم يتم التحميل بعد</div>
       </div>
       <p id="status" class="status" aria-live="polite"></p>
     </section>
 
-    <section class="table-card" aria-label="Prayer timetable">
+    <section class="table-card" aria-label="جدول مواقيت الصلاة">
       <div class="table-wrap">
         <table>
           <thead>
             <tr>
-              <th>Day</th>
-              <th>Date</th>
-              <th>Fajr</th>
-              <th>Dhuhr</th>
-              <th>Asr</th>
-              <th>Maghrib (Iftar)</th>
-              <th>Isha</th>
+              <th>اليوم</th>
+              <th>التاريخ</th>
+              <th>الفجر</th>
+              <th>الظهر</th>
+              <th>العصر</th>
+              <th>المغرب (الإفطار)</th>
+              <th>العشاء</th>
             </tr>
           </thead>
           <tbody id="tableBody"></tbody>
@@ -253,27 +268,29 @@
     </section>
 
     <section class="notes">
-      <strong>Important:</strong> Prayer and fasting times can differ slightly by district, mosque method, and local moon-sighting decisions.
-      Always follow your local mosque/official authority if there is any difference.
+      <strong>مهم:</strong> قد تختلف مواقيت الصلاة والصيام قليلًا حسب المنطقة وطريقة المسجد وقرارات رؤية الهلال المحلية.
+      احرص دائمًا على اتباع مسجدك المحلي أو الجهة الرسمية إذا وُجد أي اختلاف.
     </section>
 
     <p class="footer">
-      Data source for prayer timings: AlAdhan API (<a href="https://aladhan.com/prayer-times-api" target="_blank" rel="noopener noreferrer">aladhan.com/prayer-times-api</a>).
-      Official Algeria Ramadan 2026 start confirmation: APS (<a href="https://www.aps.dz/en/algeria/63761-ramadhan-2026-first-day-in-algeria-to-be-thursday" target="_blank" rel="noopener noreferrer">aps.dz</a>).
+      مصدر بيانات مواقيت الصلاة وتحويل التاريخ الهجري: AlAdhan API (<a href="https://aladhan.com/prayer-times-api" target="_blank" rel="noopener noreferrer">aladhan.com/prayer-times-api</a>).
+      قد يختلف بدء رمضان ونهايته قليلًا بحسب قرارات رؤية الهلال المحلية.
     </p>
   </main>
 
   <script>
-    const startDate = new Date("2026-02-19T00:00:00");
-    const totalDays = 30;
-
     const citySelect = document.getElementById("citySelect");
+    const yearInput = document.getElementById("yearInput");
     const loadBtn = document.getElementById("loadBtn");
+    const dailyBtn = document.getElementById("dailyBtn");
     const statusEl = document.getElementById("status");
     const tableBody = document.getElementById("tableBody");
+    const heroTitle = document.getElementById("heroTitle");
+    const heroIntro = document.getElementById("heroIntro");
+    const ramadanSpan = document.getElementById("ramadanSpan");
 
     function formatDate(date) {
-      return new Intl.DateTimeFormat("en-GB", {
+      return new Intl.DateTimeFormat("ar-DZ", {
         weekday: "short",
         day: "2-digit",
         month: "short",
@@ -293,8 +310,46 @@
       return value.split(" ")[0];
     }
 
+    function parseApiDate(value) {
+      const [day, month, year] = value.split("-").map(Number);
+      return new Date(year, month - 1, day);
+    }
+
     function setStatus(message) {
       statusEl.textContent = message;
+    }
+
+    async function fetchRamadanDates(year) {
+      const requests = Array.from({ length: 12 }, (_, index) => {
+        const month = index + 1;
+        return fetch(`https://api.aladhan.com/v1/gToHCalendar/${month}/${year}`);
+      });
+
+      const responses = await Promise.all(requests);
+      const payloads = await Promise.all(
+        responses.map(async (response, index) => {
+          if (!response.ok) {
+            throw new Error(`HTTP ${response.status} for month ${index + 1}`);
+          }
+          return response.json();
+        })
+      );
+
+      const dates = payloads
+        .flatMap((payload) => payload.data || [])
+        .filter((entry) => entry.hijri && Number(entry.hijri.month.number) === 9)
+        .map((entry) => ({
+          gregorianDate: parseApiDate(entry.gregorian.date),
+          hijriDay: Number(entry.hijri.day),
+          hijriYear: entry.hijri.year
+        }))
+        .sort((a, b) => a.gregorianDate - b.gregorianDate);
+
+      if (!dates.length) {
+        throw new Error(`No Ramadan dates found for ${year}`);
+      }
+
+      return dates;
     }
 
     async function fetchDay(city, date) {
@@ -325,20 +380,54 @@
       `).join("");
     }
 
+    function updateSummary(year, dates) {
+      const firstDay = dates[0];
+      const lastDay = dates[dates.length - 1];
+      const firstDateLabel = formatDate(firstDay.gregorianDate);
+      const lastDateLabel = formatDate(lastDay.gregorianDate);
+
+      heroTitle.textContent = `جدول رمضان ${year} في الجزائر لمواقيت الصلاة والإفطار`;
+      heroIntro.innerHTML = `يبدأ هذا الدليل من <strong>${firstDateLabel}</strong> (1 رمضان ${firstDay.hijriYear} هـ في الجزائر).`;
+      ramadanSpan.innerHTML = `<strong>مدة رمضان:</strong> ${dates.length} يومًا (${firstDateLabel} - ${lastDateLabel})`;
+    }
+
+    function updateDailySummary(cityLabel, date) {
+      const dateLabel = formatDate(date);
+      heroTitle.textContent = `مواقيت الصلاة اليومية في ${cityLabel}`;
+      heroIntro.innerHTML = `المواقيت اليومية ليوم <strong>${dateLabel}</strong> لمدينة ${cityLabel}.`;
+      ramadanSpan.innerHTML = `<strong>نوع الجدول:</strong> مواقيت الصلاة اليومية (${dateLabel})`;
+    }
+
     async function loadTable() {
       const city = citySelect.value;
+      const cityLabel = citySelect.options[citySelect.selectedIndex].text;
+      const year = Number(yearInput.value);
       const rows = [];
-      setStatus(`Loading Ramadan timetable for ${city}...`);
+
+      if (!Number.isInteger(year) || year < 2000 || year > 2100) {
+        setStatus("أدخل سنة صحيحة بين 2000 و2100.");
+        tableBody.innerHTML = "";
+        return;
+      }
+
+      setStatus(`جارٍ العثور على تواريخ رمضان لعام ${year} في ${cityLabel}...`);
       loadBtn.disabled = true;
+      dailyBtn.disabled = true;
+      yearInput.disabled = true;
+      citySelect.disabled = true;
 
       try {
+        const ramadanDates = await fetchRamadanDates(year);
+        const totalDays = ramadanDates.length;
+
+        updateSummary(year, ramadanDates);
+
         for (let i = 0; i < totalDays; i++) {
-          const date = new Date(startDate);
-          date.setDate(startDate.getDate() + i);
+          const date = ramadanDates[i].gregorianDate;
           const timings = await fetchDay(city, date);
 
           rows.push({
-            day: i + 1,
+            day: ramadanDates[i].hijriDay,
             date: formatDate(date),
             fajr: cleanTime(timings.Fajr),
             dhuhr: cleanTime(timings.Dhuhr),
@@ -347,21 +436,65 @@
             isha: cleanTime(timings.Isha)
           });
 
-          setStatus(`Loading ${i + 1}/${totalDays} days for ${city}...`);
+          setStatus(`جارٍ تحميل ${i + 1} من ${totalDays} يومًا لمدينة ${cityLabel}...`);
         }
 
         renderRows(rows);
-        setStatus(`Loaded ${totalDays} Ramadan days for ${city}.`);
+        setStatus(`تم تحميل ${totalDays} يومًا من رمضان لمدينة ${cityLabel} في سنة ${year}.`);
       } catch (error) {
         console.error(error);
-        setStatus("Could not load prayer times right now. Please try again.");
+        setStatus("تعذر تحميل جدول رمضان الآن. حاول مرة أخرى.");
         tableBody.innerHTML = "";
+        ramadanSpan.innerHTML = "<strong>مدة رمضان:</strong> لم يتم التحميل بعد";
       } finally {
         loadBtn.disabled = false;
+        dailyBtn.disabled = false;
+        yearInput.disabled = false;
+        citySelect.disabled = false;
+      }
+    }
+
+    async function loadDailyPrayerTimes() {
+      const city = citySelect.value;
+      const cityLabel = citySelect.options[citySelect.selectedIndex].text;
+      const today = new Date();
+
+      setStatus(`جارٍ تحميل مواقيت الصلاة اليومية لمدينة ${cityLabel}...`);
+      loadBtn.disabled = true;
+      dailyBtn.disabled = true;
+      yearInput.disabled = true;
+      citySelect.disabled = true;
+
+      try {
+        const timings = await fetchDay(city, today);
+
+        renderRows([{
+          day: "-",
+          date: formatDate(today),
+          fajr: cleanTime(timings.Fajr),
+          dhuhr: cleanTime(timings.Dhuhr),
+          asr: cleanTime(timings.Asr),
+          maghrib: cleanTime(timings.Maghrib),
+          isha: cleanTime(timings.Isha)
+        }]);
+
+        updateDailySummary(cityLabel, today);
+        setStatus(`تم تحميل مواقيت الصلاة اليومية لمدينة ${cityLabel}.`);
+      } catch (error) {
+        console.error(error);
+        setStatus("تعذر تحميل مواقيت الصلاة اليومية الآن. حاول مرة أخرى.");
+        tableBody.innerHTML = "";
+        ramadanSpan.innerHTML = "<strong>مدة رمضان:</strong> لم يتم التحميل بعد";
+      } finally {
+        loadBtn.disabled = false;
+        dailyBtn.disabled = false;
+        yearInput.disabled = false;
+        citySelect.disabled = false;
       }
     }
 
     loadBtn.addEventListener("click", loadTable);
+    dailyBtn.addEventListener("click", loadDailyPrayerTimes);
 
     loadTable();
   </script>
