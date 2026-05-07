@@ -1,0 +1,369 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ramadan 2026 Algeria Prayer & Iftar Guide</title>
+  <style>
+    :root {
+      --bg: #f7f4ea;
+      --card: #fffdf6;
+      --ink: #1f2a2e;
+      --muted: #5b676c;
+      --accent: #0f6d5e;
+      --accent-soft: #d8efe9;
+      --line: #d9ddd0;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, #ece6d6 0%, transparent 30%),
+        radial-gradient(circle at 100% 20%, #d7ebe4 0%, transparent 28%),
+        var(--bg);
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 24px 16px 36px;
+    }
+
+    .hero {
+      background: linear-gradient(130deg, #0f6d5e, #124f64);
+      color: #f5fbf9;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(18, 79, 100, 0.2);
+      animation: rise 500ms ease-out;
+    }
+
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: clamp(1.4rem, 2.4vw, 2.1rem);
+      letter-spacing: 0.2px;
+    }
+
+    .hero p {
+      margin: 6px 0;
+      color: #dbf0ea;
+      line-height: 1.45;
+    }
+
+    .controls {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    label {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    select, button {
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 10px 12px;
+      font-size: 0.95rem;
+    }
+
+    select {
+      min-width: 180px;
+      background: #f8fffd;
+      color: #0f3d35;
+    }
+
+    button {
+      background: #ffd27a;
+      border-color: #ffd27a;
+      color: #3d2e10;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 140ms ease, filter 140ms ease;
+    }
+
+    button:hover { filter: brightness(0.95); }
+    button:active { transform: translateY(1px); }
+
+    .meta {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
+
+    .pill {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .table-card {
+      margin-top: 18px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      animation: rise 600ms ease-out;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 820px;
+    }
+
+    thead th {
+      background: var(--accent-soft);
+      color: #0d4d41;
+      text-align: left;
+      font-size: 0.9rem;
+      letter-spacing: 0.15px;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    th, td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.92rem;
+      white-space: nowrap;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fffef9;
+    }
+
+    .iftar {
+      font-weight: 700;
+      color: #0c6455;
+    }
+
+    .status {
+      margin-top: 10px;
+      font-size: 0.92rem;
+      color: var(--muted);
+      min-height: 20px;
+    }
+
+    .notes {
+      margin-top: 14px;
+      background: #fff8e8;
+      border: 1px solid #efd9a8;
+      border-radius: 12px;
+      padding: 12px;
+      font-size: 0.88rem;
+      color: #604b24;
+      line-height: 1.45;
+    }
+
+    .footer {
+      margin-top: 12px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    a { color: #0f6d5e; }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero { padding: 18px; }
+      th, td { padding: 9px; }
+      .controls { align-items: stretch; }
+      .controls > * { width: 100%; }
+      select, button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <h1>Ramadan 2026 Algeria Prayer & Iftar Table</h1>
+      <p>This guide starts from <strong>Thursday, February 19, 2026</strong> (1 Ramadan 1447 AH in Algeria).</p>
+      <p>Pick your city to load the daily times for the 5 prayers and iftar (Maghrib).</p>
+
+      <div class="controls">
+        <label for="citySelect">City</label>
+        <select id="citySelect" aria-label="Select Algerian city">
+          <option value="Algiers">Algiers</option>
+          <option value="Oran">Oran</option>
+          <option value="Constantine">Constantine</option>
+          <option value="Annaba">Annaba</option>
+          <option value="Tlemcen">Tlemcen</option>
+          <option value="Batna">Batna</option>
+          <option value="Bejaia">Bejaia</option>
+          <option value="Tizi Ouzou">Tizi Ouzou</option>
+          <option value="Ghardaia">Ghardaia</option>
+          <option value="Ouargla">Ouargla</option>
+        </select>
+        <button id="loadBtn" type="button">Load Ramadan Table</button>
+      </div>
+
+      <div class="meta">
+        <div class="pill"><strong>Country:</strong> Algeria</div>
+        <div class="pill"><strong>Timezone:</strong> Africa/Algiers (UTC+1)</div>
+        <div class="pill"><strong>Ramadan span:</strong> 30 days (Feb 19 - Mar 20, 2026)</div>
+      </div>
+      <p id="status" class="status" aria-live="polite"></p>
+    </section>
+
+    <section class="table-card" aria-label="Prayer timetable">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Date</th>
+              <th>Fajr</th>
+              <th>Dhuhr</th>
+              <th>Asr</th>
+              <th>Maghrib (Iftar)</th>
+              <th>Isha</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="notes">
+      <strong>Important:</strong> Prayer and fasting times can differ slightly by district, mosque method, and local moon-sighting decisions.
+      Always follow your local mosque/official authority if there is any difference.
+    </section>
+
+    <p class="footer">
+      Data source for prayer timings: AlAdhan API (<a href="https://aladhan.com/prayer-times-api" target="_blank" rel="noopener noreferrer">aladhan.com/prayer-times-api</a>).
+      Official Algeria Ramadan 2026 start confirmation: APS (<a href="https://www.aps.dz/en/algeria/63761-ramadhan-2026-first-day-in-algeria-to-be-thursday" target="_blank" rel="noopener noreferrer">aps.dz</a>).
+    </p>
+  </main>
+
+  <script>
+    const startDate = new Date("2026-02-19T00:00:00");
+    const totalDays = 30;
+
+    const citySelect = document.getElementById("citySelect");
+    const loadBtn = document.getElementById("loadBtn");
+    const statusEl = document.getElementById("status");
+    const tableBody = document.getElementById("tableBody");
+
+    function formatDate(date) {
+      return new Intl.DateTimeFormat("en-GB", {
+        weekday: "short",
+        day: "2-digit",
+        month: "short",
+        year: "numeric"
+      }).format(date);
+    }
+
+    function toApiDate(date) {
+      const day = String(date.getDate()).padStart(2, "0");
+      const month = String(date.getMonth() + 1).padStart(2, "0");
+      const year = date.getFullYear();
+      return `${day}-${month}-${year}`;
+    }
+
+    function cleanTime(value) {
+      if (!value) return "-";
+      return value.split(" ")[0];
+    }
+
+    function setStatus(message) {
+      statusEl.textContent = message;
+    }
+
+    async function fetchDay(city, date) {
+      const formatted = toApiDate(date);
+      const url = `https://api.aladhan.com/v1/timingsByCity/${formatted}?city=${encodeURIComponent(city)}&country=Algeria&method=2`;
+      const res = await fetch(url);
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status} for ${formatted}`);
+      }
+      const json = await res.json();
+      if (!json || json.code !== 200 || !json.data || !json.data.timings) {
+        throw new Error(`Unexpected response for ${formatted}`);
+      }
+      return json.data.timings;
+    }
+
+    function renderRows(rows) {
+      tableBody.innerHTML = rows.map((r) => `
+        <tr>
+          <td>${r.day}</td>
+          <td>${r.date}</td>
+          <td>${r.fajr}</td>
+          <td>${r.dhuhr}</td>
+          <td>${r.asr}</td>
+          <td class="iftar">${r.maghrib}</td>
+          <td>${r.isha}</td>
+        </tr>
+      `).join("");
+    }
+
+    async function loadTable() {
+      const city = citySelect.value;
+      const rows = [];
+      setStatus(`Loading Ramadan timetable for ${city}...`);
+      loadBtn.disabled = true;
+
+      try {
+        for (let i = 0; i < totalDays; i++) {
+          const date = new Date(startDate);
+          date.setDate(startDate.getDate() + i);
+          const timings = await fetchDay(city, date);
+
+          rows.push({
+            day: i + 1,
+            date: formatDate(date),
+            fajr: cleanTime(timings.Fajr),
+            dhuhr: cleanTime(timings.Dhuhr),
+            asr: cleanTime(timings.Asr),
+            maghrib: cleanTime(timings.Maghrib),
+            isha: cleanTime(timings.Isha)
+          });
+
+          setStatus(`Loading ${i + 1}/${totalDays} days for ${city}...`);
+        }
+
+        renderRows(rows);
+        setStatus(`Loaded ${totalDays} Ramadan days for ${city}.`);
+      } catch (error) {
+        console.error(error);
+        setStatus("Could not load prayer times right now. Please try again.");
+        tableBody.innerHTML = "";
+      } finally {
+        loadBtn.disabled = false;
+      }
+    }
+
+    loadBtn.addEventListener("click", loadTable);
+
+    loadTable();
+  </script>
+</body>
+</html>
